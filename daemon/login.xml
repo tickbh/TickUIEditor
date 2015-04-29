@@ -1,0 +1,12 @@
+<Node Name="Scene" X="0.00" Y="0.00" Width="1280" Height="720">
+  <Child>
+    <Node Name="Sprite" X="0.00" Y="0.00" Width="1280.00" Height="720.00" AnchorX="0.00" AnchorY="0.00" Tag="231232" Image="login_bg.jpg" />
+    <Node Name="Sprite" X="532.00" Y="407.00" Width="169.00" Height="90.00" ScaleX="0.50" ScaleY="0.50" Tag="accout" Image="dengluzhanghao.png" />
+    <Node Name="Sprite" X="826.00" Y="406.00" Width="557.00" Height="77.00" ScaleX="0.50" ScaleY="0.50" Image="shurukuang.png" />
+    <Node Name="Input" X="684.00" Y="388.00" Width="246.00" Height="31.00" EmptyText="请输入用户名" IsPassword="False" />
+    <Node Name="Sprite" X="825.00" Y="467.00" Width="557.00" Height="77.00" ScaleX="0.50" ScaleY="0.50" Image="shurukuang.png" />
+    <Node Name="Input" X="681.00" Y="450.00" Width="246.00" Height="31.00" EmptyText="请输入密码" IsPassword="False" />
+    <Node Name="Sprite" X="528.00" Y="468.00" Width="168.00" Height="91.00" ScaleX="0.50" ScaleY="0.50" Image="denglumima.png" />
+    <Node Name="Button" X="671.00" Y="550.00" Width="180.00" Height="64.00" mormalText="登陆" selectText="登陆" disableText="登陆" normalBg="luseteshuanniu.png" selectBg="luseteshuanniu-over.png" disableBg="luseteshuanniu-over.png" Color="#FFFFFF" />
+  </Child>
+</Node>

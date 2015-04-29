@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Components>
+
+  <Component Name="Base" Namespace="System.Windows.Forms" Asm="System.dll">
+    <Propertys>
+      <Property Name="size" Caption="大小" Group="位置与尺寸"/>
+      <Property Name="pos" Caption="位置" Group="位置与尺寸"/>
+	  <Property Name="scale" Caption="缩放" Group="位置与尺寸"/>
+	  <Property Name="rotation" Caption="转置" Group="位置与尺寸"/>
+      <Property Name="anchorPos" Caption="锚点" Group="位置与尺寸"/>
+      <Property Name="visible" Caption="可视" Group="常规"/>
+      <Property Name="Tag" Caption="标签" Group="常规"/>
+      <Property Name="EventStr" Caption="事件" Group="常规"/>
+    </Propertys>
+  </Component>
+
+  <Component Name="Text" Namespace="System.Windows.Forms" Asm="System.dll">
+    <Propertys>
+      <Property Name="text" Caption="文本" Group="特性"/>
+      <Property Name="font" Caption="字体" Group="特性"/>
+      <Property Name="color" Caption="颜色" Group="特性"/>
+      
+    </Propertys>
+  </Component>
+
+  <Component Name="Input" Namespace="System.Windows.Forms" Asm="System.dll">
+    <Propertys>
+      <Property Name="text" Caption="文本" Group="特性"/>
+      <Property Name="emptyText" Caption="默认文本" Group="特性"/>
+      <Property Name="font" Caption="字体" Group="特性"/>
+      <Property Name="color" Caption="颜色" Group="特性"/>
+      <Property Name="isPassword" Caption="密文" Group="特性"/>
+      <Property Name="limitNum" Caption="限制数量" Group="特性"/>
+    </Propertys>
+  </Component>
+
+  <Component Name="Sprite" Namespace="System.Windows.Forms" Asm="System.dll">
+    <Propertys>
+      <Property Name="ImagePath" Caption="图片路径" Group="特性"/>
+    </Propertys>
+  </Component>
+
+  <Component Name="Scale9" Namespace="System.Windows.Forms" Asm="System.dll">
+    <Propertys>
+      <Property Name="ImagePath" Caption="图片路径" Group="特性"/>
+    </Propertys>
+  </Component>
+
+  <Component Name="Button" Namespace="System.Windows.Forms" Asm="System.dll">
+    <Propertys>
+    <Property Name="isScale9" Caption="是否九宫" Group="特性"/>
+    <Property Name="mormalText" Caption="正常文字" Group="特性"/>
+	  <Property Name="selectText" Caption="选择文字" Group="特性"/>
+	  <Property Name="disableText" Caption="禁用文字" Group="特性"/>
+	  <Property Name="buttonStatus" Caption="按钮状态" Group="特性"/>
+	  <Property Name="normalBg" Caption="正常背景" Group="特性"/>
+	  <Property Name="selectBg" Caption="选择背景" Group="特性"/>
+	  <Property Name="disableBg" Caption="禁用背景" Group="特性"/>
+	  <Property Name="normalLabel" Caption="正常标签" Group="特性"/>
+	  <Property Name="selectLabel" Caption="选择标签" Group="特性"/>
+	  <Property Name="disableLabel" Caption="禁用标签" Group="特性"/>
+	  <Property Name="font" Caption="文字" Group="特性"/>
+    <Property Name="color" Caption="颜色" Group="特性"/>
+
+    </Propertys>
+  </Component>
+  
+	<Component Name="CheckBox" Namespace="System.Windows.Forms" Asm="System.dll">
+		<Propertys>
+		  <Property Name="isCheck" Caption="选中" Group="特性"/>
+		  <Property Name="ImageNormalBgPath" Caption="正常背景" Group="特性"/>
+		  <Property Name="ImageSelectBgPath" Caption="选中背景" Group="特性"/>
+		  <Property Name="ImageDisableBgPath" Caption="禁用背景" Group="特性"/>
+		  <Property Name="ImageNodeDisablePath" Caption="禁用图标" Group="特性"/>
+		  <Property Name="ImageNodeNormalPath" Caption="正常图标" Group="特性"/>
+		  <Property Name="status" Caption="状态" Group="特性"/>
+		</Propertys>
+	</Component>
+
+	<Component Name="ProgressBar" Namespace="System.Windows.Forms" Asm="System.dll">
+		<Propertys>
+		  <Property Name="progress" Caption="进度" Group="特性"/>
+		  <Property Name="ImageBarPath" Caption="进度图片" Group="特性"/>
+		</Propertys>
+	</Component>
+	
+	<Component Name="SliderBar" Namespace="System.Windows.Forms" Asm="System.dll">
+		<Propertys>
+		  <Property Name="progress" Caption="进度" Group="特性"/>
+		  <Property Name="PathSliderBack" Caption="背景图片" Group="特性"/>
+		  <Property Name="PathSliderBar" Caption="进度图片" Group="特性"/>
+		  <Property Name="PathSliderDisable" Caption="禁用图标" Group="特性"/>
+		  <Property Name="PathSliderNormal" Caption="正常图标" Group="特性"/>
+		  <Property Name="PathSliderSelect" Caption="选择图标" Group="特性"/>
+		  <Property Name="status" Caption="状态" Group="特性"/>
+		</Propertys>
+	</Component>
+
+  <Component Name="Panel" Namespace="System.Windows.Forms" Asm="System.dll">
+    <Propertys>
+      <Property Name="panelPath" Caption="路径" Group="特性"/>
+    </Propertys>
+  </Component>
+
+</Components>

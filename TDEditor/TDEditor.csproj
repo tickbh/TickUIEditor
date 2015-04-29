@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40793A27-478B-4357-B4C3-FC8943131F3D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TDEditor</RootNamespace>
+    <AssemblyName>TDEditor</AssemblyName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ControlDDData.cs" />
+    <Compile Include="Dock\AnimateDock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dock\AnimateDock.Designer.cs">
+      <DependentUpon>AnimateDock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dock\ImagePreViewDock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dock\ImagePreViewDock.Designer.cs">
+      <DependentUpon>ImagePreViewDock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dock\ObjectDock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dock\ObjectDock.Designer.cs">
+      <DependentUpon>ObjectDock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dock\PropDock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dock\PropDock.Designer.cs">
+      <DependentUpon>PropDock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dock\RenderDock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dock\RenderDock.Designer.cs">
+      <DependentUpon>RenderDock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dock\ResourceDock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dock\ResourceDock.Designer.cs">
+      <DependentUpon>ResourceDock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\DockHelper.cs" />
+    <Compile Include="Prop\ImageAttribute.cs" />
+    <Compile Include="Recall\CommandAddList.cs" />
+    <Compile Include="Recall\CommandAnchorPos.cs" />
+    <Compile Include="Recall\CommandDelList.cs" />
+    <Compile Include="Recall\CommandBase.cs" />
+    <Compile Include="Recall\CommandManager.cs" />
+    <Compile Include="Recall\CommandMoveList.cs" />
+    <Compile Include="Recall\CommandResizeList.cs" />
+    <Compile Include="Recall\CommandScale.cs" />
+    <Compile Include="Utils\EventManager.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="project\UIProject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prop\PointFConverter.cs" />
+    <Compile Include="Prop\SizeFConverter.cs" />
+    <Compile Include="Utils\Constant.cs" />
+    <Compile Include="Utils\DynamicObj.cs" />
+    <Compile Include="Utils\FileHelper.cs" />
+    <Compile Include="Utils\ImageHelper.cs" />
+    <Compile Include="Utils\IniHelper.cs" />
+    <Compile Include="Utils\NestException.cs" />
+    <Compile Include="Utils\Statuses.cs" />
+    <Compile Include="Utils\UIHelper.cs" />
+    <Compile Include="Utils\UtilHelper.cs" />
+    <Compile Include="Utils\XmlHelper.cs" />
+    <Compile Include="VS2012ColorTable.cs" />
+    <Compile Include="VS2012ToolStripExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VS2012ToolStripExtender.Designer.cs">
+      <DependentUpon>VS2012ToolStripExtender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VS2012ToolStripRenderer.cs" />
+    <Compile Include="Prop\CustomProperty.cs" />
+    <Compile Include="Widgets\ImagePreForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\ImageText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\ImageText.Designer.cs">
+      <DependentUpon>ImageText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\RenderBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\RenderScene.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\RenderScene.Designer.cs">
+      <DependentUpon>RenderScene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\TDButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDCoord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDCoord.Designer.cs">
+      <DependentUpon>TDCoord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\TDInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDScale9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDSliderBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDSprite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Widgets\TDText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinWidget\ColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinWidget\ColorSlider.designer.cs">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dock\AnimateDock.resx">
+      <DependentUpon>AnimateDock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dock\ImagePreViewDock.resx">
+      <DependentUpon>ImagePreViewDock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dock\ObjectDock.resx">
+      <DependentUpon>ObjectDock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dock\PropDock.resx">
+      <DependentUpon>PropDock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dock\RenderDock.resx">
+      <DependentUpon>RenderDock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dock\ResourceDock.resx">
+      <DependentUpon>ResourceDock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Widgets\ImageText.resx">
+      <DependentUpon>ImageText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Widgets\RenderScene.resx">
+      <DependentUpon>RenderScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinWidget\ColorSlider.resx">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolWindow.Designer.cs">
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj">
+      <Project>{6c55b776-26d4-4db3-a6ab-87e783b2f3d1}</Project>
+      <Name>ICSharpCode.AvalonEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ArrowDown.bmp" />
+    <None Include="Images\ArrowUp.bmp" />
+    <None Include="Images\Bitmap.ico" />
+    <None Include="Images\BlankIcon.ico" />
+    <None Include="Images\ClosedFolder.ICO" />
+    <None Include="Images\CSFile.ico" />
+    <None Include="Images\CSProject.ico" />
+    <None Include="Images\File.ico" />
+    <None Include="Images\Form.ico" />
+    <None Include="Images\Mouse.bmp" />
+    <None Include="Images\msenv22.ico" />
+    <None Include="Images\New.ico" />
+    <None Include="Images\Open.ico" />
+    <None Include="Images\OpenFolder.ICO" />
+    <None Include="Images\OutputWindow.ico" />
+    <None Include="Images\PropertyWindow.ico" />
+    <None Include="Images\Reference.ico" />
+    <None Include="Images\References.ico" />
+    <None Include="Images\SolutionExplorer.ico" />
+    <None Include="Images\TaskListWindow.ico" />
+    <None Include="Images\ToolboxWindow.ico" />
+    <None Include="Images\XmlFile.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DockPanel.xml" />
+    <EmbeddedResource Include="ToolWindow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Button.png" />
+    <Content Include="Images\CheckBox.png" />
+    <Content Include="Images\default_miss.png" />
+    <Content Include="Images\ImageFile.png" />
+    <Content Include="Images\Input.png" />
+    <Content Include="Images\ProcessBar.png" />
+    <Content Include="Images\SliderBar.png" />
+    <Content Include="Images\Sprite.png" />
+    <Content Include="Images\Text.png" />
+    <Content Include="Resources\CustomProperty.xml" />
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cp -R $(ProjectDir)/Images $(TargetDir)
+cp -R $(ProjectDir)/Resources $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
