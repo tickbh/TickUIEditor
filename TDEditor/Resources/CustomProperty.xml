@@ -101,5 +101,16 @@
       <Property Name="panelPath" Caption="路径" Group="特性"/>
     </Propertys>
   </Component>
+  
+  <Component Name="Page" Namespace="System.Windows.Forms" Asm="System.dll">
+    <Propertys>
+      <Property Name="max" Caption="最大个数" Group="特性"/>
+      <Property Name="col" Caption="列数" Group="特性"/>
+      <Property Name="row" Caption="行数" Group="特性"/>
+      <Property Name="padCol" Caption="列间隔" Group="特性"/>
+      <Property Name="padRow" Caption="行间隔" Group="特性"/>
+      <Property Name="rederPath" Caption="子节点路径" Group="特性"/>
+    </Propertys>
+  </Component>
 
 </Components>

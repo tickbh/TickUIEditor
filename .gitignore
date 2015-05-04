@@ -17,7 +17,6 @@ Thumbs.db
 [Tt]est[Rr]esult*
 _UpgradeReport_Files
 *[Pp]ublish.xml
-*.project
 *.metadata
 logs
 *.generated.cs

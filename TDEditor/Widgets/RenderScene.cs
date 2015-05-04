@@ -109,6 +109,8 @@ namespace TDEditor.Widgets
             InitializeComponent();
 
             this.Paint += new PaintEventHandler(this.Item_Paint);
+
+            this.MouseDoubleClick += new MouseEventHandler(this.item_doubleClick);
             this.MouseDown += new MouseEventHandler(this.item_MouseDown);
             this.MouseMove += new MouseEventHandler(this.item_MouseMove);
             this.MouseUp += new MouseEventHandler(this.item_MouseUp);
@@ -417,7 +419,25 @@ namespace TDEditor.Widgets
             Point point = getFixPoint(e.X, e.Y);
             zoomChange(e.Delta, point);
         }
-        
+
+        protected void item_doubleClick(object sender, MouseEventArgs e)
+        {
+            Point pos = getFixPoint(e.X, e.Y);
+            RenderBase clickItem = getClickItem(pos, out clickPosArena);
+            if (clickItem == null)
+            {
+                return;
+            }
+            if (clickItem is TDPage)
+            {
+                EventManager.RaiserEvent(Constant.PropSelectChange, (clickItem as TDPage).renderItem, null);
+            }
+            else if (clickItem is TDPanel)
+            {
+                EventManager.RaiserEvent(Constant.OpenLayoutEvent, this, (clickItem as TDPanel).panelPath);
+            }
+        }
+
         protected void item_SizeChanged(object sender, EventArgs e)
         {
             DefaultOffsetPos.X = (this.Size.Width - _sceneSize.Width) / 2;

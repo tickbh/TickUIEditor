@@ -37,6 +37,7 @@
             this.imageText7 = new TDEditor.Widgets.ImageText();
             this.imageText8 = new TDEditor.Widgets.ImageText();
             this.imageText9 = new TDEditor.Widgets.ImageText();
+            this.Page = new TDEditor.Widgets.ImageText();
             this.SuspendLayout();
             // 
             // imageText1
@@ -192,10 +193,28 @@
             this.imageText9.TabIndex = 10;
             this.imageText9.Tag = "Panel";
             // 
+            // Page
+            // 
+            this.Page.AllowDrop = true;
+            this.Page.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Page.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Page.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Page.Location = new System.Drawing.Point(12, 253);
+            this.Page.Margin = new System.Windows.Forms.Padding(0);
+            this.Page.MaximumSize = new System.Drawing.Size(75, 75);
+            this.Page.MinimumSize = new System.Drawing.Size(75, 75);
+            this.Page.Name = "Page";
+            this.Page.showImage = "Images/Input.png";
+            this.Page.showText = "页面";
+            this.Page.Size = new System.Drawing.Size(75, 75);
+            this.Page.TabIndex = 11;
+            this.Page.Tag = "Page";
+            // 
             // ObjectDock
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(251, 412);
+            this.Controls.Add(this.Page);
             this.Controls.Add(this.imageText9);
             this.Controls.Add(this.imageText8);
             this.Controls.Add(this.imageText7);
@@ -225,5 +244,6 @@
         private Widgets.ImageText imageText7;
         private Widgets.ImageText imageText8;
         private Widgets.ImageText imageText9;
+        private Widgets.ImageText Page;
     }
 }
