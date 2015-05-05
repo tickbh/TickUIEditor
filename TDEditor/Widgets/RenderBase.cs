@@ -231,6 +231,19 @@ namespace TDEditor.Widgets
             }
         }
 
+        private int _id = 0;
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
+
         private String _event = "";
         public String EventStr
         {
@@ -783,6 +796,11 @@ namespace TDEditor.Widgets
             {
                 xml.SetAttributeValue("Event", this._event);
             }
+
+            if (this._id != 0)
+            {
+                xml.SetAttributeValue("Id", this._id);
+            }
         }
 
         public virtual void setAttrBySource(String src) {
@@ -819,6 +837,10 @@ namespace TDEditor.Widgets
             if (xml.Attribute("Event") != null)
             {
                 this._event = XmlHelper.GetString(xml, "Event");
+            }
+            if (xml.Attribute("Id") != null)
+            {
+                this._id = XmlHelper.GetInt(xml, "Id");
             }
 
         }

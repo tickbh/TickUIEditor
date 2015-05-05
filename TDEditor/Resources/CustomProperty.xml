@@ -5,11 +5,12 @@
     <Propertys>
       <Property Name="size" Caption="大小" Group="位置与尺寸"/>
       <Property Name="pos" Caption="位置" Group="位置与尺寸"/>
-	  <Property Name="scale" Caption="缩放" Group="位置与尺寸"/>
-	  <Property Name="rotation" Caption="转置" Group="位置与尺寸"/>
+	    <Property Name="scale" Caption="缩放" Group="位置与尺寸"/>
+	    <Property Name="rotation" Caption="转置" Group="位置与尺寸"/>
       <Property Name="anchorPos" Caption="锚点" Group="位置与尺寸"/>
       <Property Name="visible" Caption="可视" Group="常规"/>
       <Property Name="Tag" Caption="标签" Group="常规"/>
+      <Property Name="Id" Caption="ID" Group="常规"/>
       <Property Name="EventStr" Caption="事件" Group="常规"/>
     </Propertys>
   </Component>
@@ -25,6 +26,7 @@
 
   <Component Name="Input" Namespace="System.Windows.Forms" Asm="System.dll">
     <Propertys>
+      <Property Name="inputBg" Caption="背景" Group="特性"/>
       <Property Name="text" Caption="文本" Group="特性"/>
       <Property Name="emptyText" Caption="默认文本" Group="特性"/>
       <Property Name="font" Caption="字体" Group="特性"/>

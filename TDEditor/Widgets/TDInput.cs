@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using TDEditor.Prop;
 
 namespace TDEditor.Widgets
 {
@@ -102,6 +103,31 @@ namespace TDEditor.Widgets
             }
         }
 
+        private Image _bgImage = DynamicObj.DefaultInputBgImg;
+        private String _inputBg = Constant.PathInputBgImg;
+        [ImageAttribute]
+        public String inputBg
+        {
+            set
+            {
+                _bgImage = ImageHelper.FromFileInc(value);
+                if (_bgImage == null)
+                {
+                    _bgImage = DynamicObj.DefaultInputBgImg;
+                    _inputBg = Constant.PathInputBgImg;
+                }
+                else
+                {
+                    _inputBg = value;
+                }
+                raisePropChange();
+            }
+            get
+            {
+                return _inputBg;
+            }
+        }
+
         public TDInput()
         {
             this.Name = Constant.TypeInput;
@@ -112,6 +138,7 @@ namespace TDEditor.Widgets
         }
         protected override void paintSelft(object sender, PaintEventArgs e)
         {
+            e.Graphics.DrawImage(_bgImage, new Rectangle(0, 0, _bgImage.Width, _bgImage.Height));
             if (_text != null && _text.Length > 0)
             {
                 String drawText = _text;
@@ -138,6 +165,8 @@ namespace TDEditor.Widgets
         public override void setAttrToXml(ref XElement xml)
         {
             base.setAttrToXml(ref xml);
+            if (this._inputBg != Constant.PathInputBgImg)
+                xml.SetAttributeValue("InputBg", this._inputBg);
             if (!UtilHelper.isEmpty(this._text))
                 xml.SetAttributeValue("Text", this._text);
             if (!UtilHelper.isEmpty(this._emptyText))
@@ -156,6 +185,8 @@ namespace TDEditor.Widgets
         public override void getAttrByXml(XElement xml)
         {
             base.getAttrByXml(xml);
+            if (xml.Attribute("InputBg") != null)
+                this.text = XmlHelper.GetString(xml, "InputBg");
             if (xml.Attribute("Text") != null)
                 this.text = XmlHelper.GetString(xml, "Text");
             if (xml.Attribute("EmptyText") != null)

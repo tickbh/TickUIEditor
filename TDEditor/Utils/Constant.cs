@@ -56,6 +56,8 @@ namespace TDEditor.Utils
 
         public const String PathProgressImg = "Images\\ProgressFile.png";
 
+        public const String PathInputBgImg = "Images\\shurukuang.png";
+
         public const String DefaultSingleFormat = "f2";
         public const String DefaultSingleIntFormat = "f0";
 

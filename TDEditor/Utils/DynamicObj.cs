@@ -45,6 +45,7 @@ namespace TDEditor.Utils
         public static Image DefaultProgressImg;
 
         public static Image DefaultSceneBgImg;
+        public static Image DefaultInputBgImg;
 
         public static XmlDocument propXmlDoc = new XmlDocument();
 
@@ -83,11 +84,7 @@ namespace TDEditor.Utils
             DefaultSliderSelectImg = Image.FromFile(startPath + Constant.PathSliderSelectImg);
 
             DefaultProgressImg = Image.FromFile(startPath + Constant.PathProgressImg);
+            DefaultInputBgImg = Image.FromFile(startPath + Constant.PathInputBgImg);
         }
-
-
-
-
-
     }
 }
