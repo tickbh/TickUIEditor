@@ -303,7 +303,7 @@ namespace TDEditor.Widgets
             e.Graphics.TranslateTransform(offsetX, offsetY);
             e.Graphics.ScaleTransform(scale.X, scale.Y);
             e.Graphics.RotateTransform(rotation);
-            e.Graphics.SetClip(boundingBox());
+            e.Graphics.SetClip(boundingBox(), CombineMode.Intersect);
             if (!visible)
             {
                 e.Graphics.ResetClip();
