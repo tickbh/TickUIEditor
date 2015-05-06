@@ -15,7 +15,6 @@ namespace TDEditor.Widgets
 
     class TDButton : RenderBase
     {
-
         public bool isScale9
         {
             get;
@@ -358,7 +357,7 @@ namespace TDEditor.Widgets
                 xml.SetAttributeValue("FontSize", this._font.Size.ToString(Constant.DefaultSingleIntFormat));
             }
             if(!UtilHelper.isEmpty(this._normalText))
-                xml.SetAttributeValue("mormalText", this.mormalText);
+                xml.SetAttributeValue("normalText", this.mormalText);
             if (!UtilHelper.isEmpty(this._selectText))
                 xml.SetAttributeValue("selectText", this.selectText);
             if (!UtilHelper.isEmpty(this._disableText))
@@ -379,7 +378,7 @@ namespace TDEditor.Widgets
                 xml.SetAttributeValue("disableLabel", this.disableLabel);
             if(!UtilHelper.isEqual(this._color, Color.Black))
                 xml.SetAttributeValue("Color", UIHelper.ColorToString(this._color));
-
+                xml.SetAttributeValue("IsScale9", this.isScale9);
         }
 
 
@@ -392,8 +391,8 @@ namespace TDEditor.Widgets
             {
                 this.status = curStatus;
             }
-            if (xml.Attribute("mormalText") != null)
-                this.mormalText = XmlHelper.GetString(xml, "mormalText");
+            if (xml.Attribute("normalText") != null)
+                this.mormalText = XmlHelper.GetString(xml, "normalText");
             if (xml.Attribute("selectText") != null)
                 this.selectText = XmlHelper.GetString(xml, "selectText");
             if (xml.Attribute("disableText") != null)
@@ -412,7 +411,8 @@ namespace TDEditor.Widgets
                 this.disableLabel = XmlHelper.GetString(xml, "disableLabel");
             if (xml.Attribute("Color") != null)
                 this.color = UIHelper.StringToColor(XmlHelper.GetString(xml, "Color"));
-
+            if (xml.Attribute("IsScale9") != null)
+                this.isScale9 = XmlHelper.GetBool(xml, "IsScale9");
         }
     }
 }

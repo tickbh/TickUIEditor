@@ -71,8 +71,8 @@ namespace TDEditor.Widgets
         {
             set
             {
-                float offsetX = size.Width * (value.X - _anchorPos.X);
-                float offsetY = size.Height * (value.Y - _anchorPos.Y);
+                float offsetX = size.Width * scale.X * (value.X - _anchorPos.X);
+                float offsetY = size.Height * scale.Y * (value.Y - _anchorPos.Y);
                 _anchorPos = value;
                 this.pos = new PointF(_pos.X + offsetX, _pos.Y + offsetY);
                 raisePropChange();
@@ -311,8 +311,8 @@ namespace TDEditor.Widgets
         {
             GraphicsState transState = e.Graphics.Save();
             e.Graphics.TranslateTransform(pos.X, pos.Y);
-            float offsetX = -size.Width * anchorPos.X;
-            float offsetY = -size.Height * anchorPos.Y;
+            float offsetX = -size.Width * scale.X * anchorPos.X;
+            float offsetY = -size.Height * scale.Y * anchorPos.Y;
             e.Graphics.TranslateTransform(offsetX, offsetY);
             e.Graphics.ScaleTransform(scale.X, scale.Y);
             e.Graphics.RotateTransform(rotation);
@@ -392,15 +392,14 @@ namespace TDEditor.Widgets
 
         public RectangleF boxAtParent()
         {
-            float startX = pos.X - size.Width * anchorPos.X + (scale.X < 0 ? scale.X * size.Width : 0);
-            float startY = pos.Y - size.Height * anchorPos.Y + (scale.Y < 0 ? scale.Y * size.Height : 0);
-            return new RectangleF(startX, startY, size.Width * Math.Abs(scale.X), size.Height * Math.Abs(scale.Y));
+            PointF start = startPos();
+            return new RectangleF(start.X, start.Y, size.Width * Math.Abs(scale.X), size.Height * Math.Abs(scale.Y));
         }
 
         public PointF startPos()
         {
-            float startX = pos.X - size.Width * anchorPos.X + (scale.X < 0 ? scale.X * size.Width : 0);
-            float startY = pos.Y - size.Height * anchorPos.Y + (scale.Y < 0 ? scale.Y * size.Height : 0);
+            float startX = pos.X - scale.X * size.Width * anchorPos.X + (scale.X < 0 ? scale.X * size.Width : 0);
+            float startY = pos.Y - scale.Y * size.Height * anchorPos.Y + (scale.Y < 0 ? scale.Y * size.Height : 0);
             return new PointF(startX, startY);
         }
 

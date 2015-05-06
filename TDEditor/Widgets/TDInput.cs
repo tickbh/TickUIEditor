@@ -103,17 +103,17 @@ namespace TDEditor.Widgets
             }
         }
 
-        private Image _bgImage = DynamicObj.DefaultInputBgImg;
+        private TDScale9 _bgImage = TDScale9.CreateScale9(Constant.PathInputBgImg);
         private String _inputBg = Constant.PathInputBgImg;
         [ImageAttribute]
         public String inputBg
         {
             set
             {
-                _bgImage = ImageHelper.FromFileInc(value);
+                _bgImage = TDScale9.CreateScale9(value);
                 if (_bgImage == null)
                 {
-                    _bgImage = DynamicObj.DefaultInputBgImg;
+                    _bgImage = TDScale9.CreateScale9(Constant.PathInputBgImg);
                     _inputBg = Constant.PathInputBgImg;
                 }
                 else
@@ -138,7 +138,7 @@ namespace TDEditor.Widgets
         }
         protected override void paintSelft(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawImage(_bgImage, new Rectangle(0, 0, _bgImage.Width, _bgImage.Height));
+            _bgImage.DrawScale9(e.Graphics, this.size);
             if (_text != null && _text.Length > 0)
             {
                 String drawText = _text;
