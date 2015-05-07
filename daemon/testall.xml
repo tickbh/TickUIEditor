@@ -1,6 +1,6 @@
 <Node Name="Scene" X="0.00" Y="0.00" Width="1280" Height="720">
   <Child>
-    <Node Name="Scale9" X="0.00" Y="0.00" Width="1280.00" Height="720.00" AnchorX="0.00" AnchorY="0.00" Tag="bg" Image="Images/shurukuang.png" />
+    <Node Name="Scale9" X="1.00" Y="0.00" Width="1280.00" Height="720.00" AnchorX="0.00" AnchorY="0.00" Tag="bg" Image="Images/shurukuang.png" />
     <Node Name="Sprite" X="152.00" Y="113.00" Width="212.00" Height="216.00" Image="1.png" />
     <Node Name="Button" X="745.00" Y="261.00" Width="180.00" Height="64.00" Event="test1" normalText="登陆" selectText="登陆" disableText="登陆" normalBg="luseteshuanniu.png" selectBg="luseteshuanniu-over.png" disableBg="luseteshuanniu-over.png" Color="#FFFFFF" IsScale9="true" />
     <Node Name="CheckBox" X="353.00" Y="59.00" Width="40.00" Height="40.00" />
