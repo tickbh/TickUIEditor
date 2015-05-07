@@ -260,6 +260,7 @@ namespace TDEditor.Widgets
         {
 
             bool isClickControl = (Control.ModifierKeys & Keys.Control) == Keys.Control;
+            bool isClickAlt = (Control.ModifierKeys & Keys.Alt) == Keys.Alt;
             if (e.Button == MouseButtons.Left)
             {
                 selectStartPos = selectCurPos = getFixPoint(e.X, e.Y);
@@ -274,7 +275,7 @@ namespace TDEditor.Widgets
                 else
                 {
                     RenderBase clickItem = getSelectClickItem(selectStartPos, out clickPosArena);
-                    if (clickItem == null)
+                    if (clickItem == null || isClickAlt)
                     {
                         clickItem = getClickItem(selectStartPos, out clickPosArena);
                     }
@@ -537,14 +538,14 @@ namespace TDEditor.Widgets
                 }
                 Invalidate();
             }
-            else if (e.KeyCode == Keys.C && e.Modifiers == Keys.Control)
-            {
-                CopySelectItem();
-            }
-            else if (e.KeyCode == Keys.V && e.Modifiers == Keys.Control)
-            {
-                PasteItemByClip();
-            }
+            //else if (e.KeyCode == Keys.C && e.Modifiers == Keys.Control)
+            //{
+            //    CopySelectItem();
+            //}
+            //else if (e.KeyCode == Keys.V && e.Modifiers == Keys.Control)
+            //{
+            //    PasteItemByClip();
+            //}
             else if (e.KeyCode == Keys.R && e.Modifiers == Keys.Control)
             {
                 UIHelper.loadViewToScene("E:/1.xml", this);

@@ -82,8 +82,7 @@ namespace TDEditor.Widgets
             base.setAttrToXml(ref xml);
             if (!UtilHelper.isEmpty(this.ImageBarPath) && this.ImageBarPath != Constant.PathProgressImg)
                 xml.SetAttributeValue("ImageBar", this.ImageBarPath);
-            if (!UtilHelper.isEqual(this.progress, 1))
-                xml.SetAttributeValue("Progress", this.progress.ToString(Constant.DefaultSingleFormat));
+            xml.SetAttributeValue("Progress", this.progress.ToString(Constant.DefaultSingleFormat));
         }
 
 
