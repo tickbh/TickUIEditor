@@ -1,0 +1,7 @@
+<Node Name="Scene" X="0.00" Y="0.00" Width="1280" Height="720">
+  <Child>
+    <Node Name="Page" X="977.00" Y="92.00" Width="162.00" Height="165.00" Max="21">
+      <RenderItem Name="Panel" X="0.00" Y="0.00" Width="50.00" Height="50.00" Path="test.xml" />
+    </Node>
+  </Child>
+</Node>

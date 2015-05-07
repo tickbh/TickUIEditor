@@ -1,5 +1,5 @@
 <Node Name="Scene" X="0.00" Y="0.00" Width="50" Height="50">
   <Child>
-    <Node Name="Button" X="20.00" Y="30.00" Width="80.00" Height="35.00" selectBg="Images\Button_Select.png" disableBg="Images\Button_Disable.png" />
+    <Node Name="Button" X="20.00" Y="25.00" Width="80.00" Height="35.00" selectBg="Images\Button_Select.png" disableBg="Images\Button_Disable.png" IsScale9="false" />
   </Child>
 </Node>
