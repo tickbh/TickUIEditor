@@ -373,8 +373,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>cp -R $(ProjectDir)/Images $(TargetDir)
-cp -R $(ProjectDir)/Resources $(TargetDir)</PostBuildEvent>
+    <PostBuildEvent>xcopy $(ProjectDir)Images $(TargetDir)Images\  /S/E/Y
+xcopy $(ProjectDir)Resources $(TargetDir)Resources\  /S/E/Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
