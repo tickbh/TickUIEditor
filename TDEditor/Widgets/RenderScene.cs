@@ -26,6 +26,17 @@ namespace TDEditor.Widgets
         StatusResize,
     }
 
+    public enum LayoutAlignType
+    {
+	    LayoutAlign_Left,
+	    LayoutAlign_CenterHor,
+	    LayoutAlign_Right,
+	    LayoutAlign_Top,
+	    LayoutAlign_CenterVer,
+	    LayoutAlign_Bottom,
+    };
+
+
     public partial class RenderScene : TDPanel
     {
         private MouseOpStatus mouseStatus = MouseOpStatus.StatusNode;
@@ -313,6 +324,51 @@ namespace TDEditor.Widgets
                 Invalidate();
                 recordOriStatus(mouseOpItems);
             }
+            else if (e.Button == MouseButtons.Right)
+            {
+                ToolStripMenuItem[] formMenuItemList = new ToolStripMenuItem[6];
+                formMenuItemList[0] = new ToolStripMenuItem("左对齐", null, new EventHandler(this.layoutCallback));
+                formMenuItemList[0].Tag = LayoutAlignType.LayoutAlign_Left;
+                formMenuItemList[1] = new ToolStripMenuItem("水平居中对齐", null, new EventHandler(this.layoutCallback));
+                formMenuItemList[1].Tag = LayoutAlignType.LayoutAlign_CenterHor;
+                formMenuItemList[2] = new ToolStripMenuItem("右对齐", null, new EventHandler(this.layoutCallback));
+                formMenuItemList[2].Tag = LayoutAlignType.LayoutAlign_Right;
+                formMenuItemList[3] = new ToolStripMenuItem("上对齐", null, new EventHandler(this.layoutCallback));
+                formMenuItemList[3].Tag = LayoutAlignType.LayoutAlign_Top;
+                formMenuItemList[4] = new ToolStripMenuItem("垂直居中对齐", null, new EventHandler(this.layoutCallback));
+                formMenuItemList[4].Tag = LayoutAlignType.LayoutAlign_CenterVer;
+                formMenuItemList[5] = new ToolStripMenuItem("下对齐", null, new EventHandler(this.layoutCallback));
+                formMenuItemList[5].Tag = LayoutAlignType.LayoutAlign_Bottom;
+                ContextMenuStrip formMenu = new ContextMenuStrip();
+                formMenu.Items.AddRange(formMenuItemList);
+                this.ContextMenuStrip = formMenu;
+
+                //QMenu* layoutMenu = new QMenu(QStringLiteral("布局对齐"));
+                //QAction* layoutLeftAction = layoutMenu->addAction(QStringLiteral("左对齐"));
+                //QAction* layoutCenterHorAction = layoutMenu->addAction(QStringLiteral("水平居中对齐"));
+                //QAction* layoutRightAction = layoutMenu->addAction(QStringLiteral("右对齐"));
+                //layoutMenu->addSeparator();
+                //QAction* layoutTopAction = layoutMenu->addAction(QStringLiteral("上对齐"));
+                //QAction* layoutCenterVerAction = layoutMenu->addAction(QStringLiteral("垂直居中对齐"));
+                //QAction* layoutBottomAction = layoutMenu->addAction(QStringLiteral("下对齐"));
+                //menu.addMenu(layoutMenu);
+                //layoutMenu->setEnabled(selectItems.size() > 1);
+
+                //QMenu* orderMenu = new QMenu(QStringLiteral("布局顺序"));
+                //QAction* orderToTop = orderMenu->addAction(QStringLiteral("移至顶层"));
+                //QAction* orderToBottom = orderMenu->addAction(QStringLiteral("移至底层"));
+            }
+        }
+
+        private void layoutCallback(object sender, EventArgs e)
+        {
+            if (!(sender is ToolStripMenuItem))
+            {
+                return;
+            }
+            ToolStripMenuItem item = sender as ToolStripMenuItem;
+            LayoutAlignType type = (LayoutAlignType)item.Tag;
+            execSetLayoutAlign(type);
         }
 
         //pbimg＂鼠标移动＂事件处理方法
@@ -720,6 +776,98 @@ namespace TDEditor.Widgets
             xml.SetAttributeValue("Height", this._sceneSize.Height.ToString(Constant.DefaultSingleIntFormat));
         }
 
+        public void execSetLayoutAlign(LayoutAlignType layout)
+        {
+            mouseOpItems = getSelectItems();
+            if (mouseOpItems.Count <= 1)
+            {
+                return;
+            }
+            RenderBase firstSelect = mouseOpItems[0];
+            List<RenderBase> opItems = new List<RenderBase>();
+            foreach (RenderBase item in mouseOpItems)
+            {
+                if (item.getParent() == firstSelect.getParent())
+                {
+                    opItems.Add(item);
+                }
+            }
+            if (opItems.Count <= 1)
+            {
+                return;
+            }
+            recordOriStatus(opItems);
+            float left = 0, centerHor = 0, right = 0, top = 0, centerVer = 0, bottom = 0;
+            SizeF selectSize = firstSelect.size;
+            PointF selectPoint = firstSelect.pos;//scenePointToRender((int)firstSelect.pos.X, (int)firstSelect.pos.Y);
+            RectangleF selectRect = firstSelect.boxAtParent();
+
+            left = selectPoint.X;
+            centerHor = selectPoint.X + selectSize.Width / 2;
+            right = selectPoint.X + selectSize.Width;
+            top = selectPoint.Y;
+            centerVer = selectPoint.Y + selectSize.Height / 2;
+            bottom = selectPoint.Y + selectSize.Height;
+
+            switch (layout)
+            {
+                case LayoutAlignType.LayoutAlign_Left:
+                    {
+                        foreach (RenderBase item in mouseOpItems)
+                        {
+                            RectangleF rect = item.boxAtParent();
+                            item.pos = new PointF(item.pos.X + left - rect.X, item.pos.Y);
+                        }
+                    }
+                    break;
+                case LayoutAlignType.LayoutAlign_Right:
+                    {
+                        foreach (RenderBase item in mouseOpItems)
+                        {
+                            RectangleF rect = item.boxAtParent();
+                            item.pos = new PointF(item.pos.X + right - rect.X - rect.Width, item.pos.Y);
+                        }
+                    }
+                    break;
+                case LayoutAlignType.LayoutAlign_CenterHor:
+                    {
+                        foreach (RenderBase item in mouseOpItems)
+                        {
+                            RectangleF rect = item.boxAtParent();
+                            item.pos = new PointF(item.pos.X + centerHor - rect.X - rect.Width / 2, item.pos.Y);
+                        }
+                    } break;
+                case LayoutAlignType.LayoutAlign_Top:
+                    {
+                        foreach (RenderBase item in mouseOpItems)
+                        {
+                            RectangleF rect = item.boxAtParent();
+                            item.pos = new PointF(item.pos.X, item.pos.Y + top - rect.Y);
+                        }
+                    }
+                    break;
+                case LayoutAlignType.LayoutAlign_Bottom:
+                    {
+                        foreach (RenderBase item in mouseOpItems)
+                        {
+                            RectangleF rect = item.boxAtParent();
+                            item.pos = new PointF(item.pos.X, item.pos.Y + bottom - rect.Y - rect.Height);
+                        }
+                    }
+                    break;
+                case LayoutAlignType.LayoutAlign_CenterVer:
+                    {
+                        foreach (RenderBase item in mouseOpItems)
+                        {
+                            RectangleF rect = item.boxAtParent();
+                            item.pos = new PointF(item.pos.X, item.pos.Y + centerVer - rect.Y - rect.Height / 2);
+                        }
+                    } break;
+                default:
+                    break;
+            }
+            commandManager.AddCommand(new CommandMoveList(this, mouseOpItems));
+        }
 
         public override void getAttrByXml(XElement xml)
         {

@@ -2,7 +2,7 @@
   <Child>
     <Node Name="Scale9" X="1.00" Y="0.00" Width="1280.00" Height="720.00" AnchorX="0.00" AnchorY="0.00" Tag="bg" Image="Images/shurukuang.png" />
     <Node Name="Sprite" X="152.00" Y="113.00" Width="212.00" Height="216.00" Image="1.png" />
-    <Node Name="Button" X="745.00" Y="261.00" Width="180.00" Height="64.00" Event="test1" normalText="登陆" selectText="登陆" disableText="登陆" normalBg="luseteshuanniu.png" selectBg="luseteshuanniu-over.png" disableBg="luseteshuanniu-over.png" Color="#FFFFFF" IsScale9="true" />
+    <Node Name="Button" X="745.00" Y="261.00" Width="116.00" Height="64.00" Event="test1" normalText="登陆" selectText="登陆" disableText="登陆" normalBg="luseteshuanniu.png" selectBg="luseteshuanniu-over.png" disableBg="luseteshuanniu-over.png" Color="#FFFFFF" IsScale9="true" />
     <Node Name="CheckBox" X="353.00" Y="59.00" Width="40.00" Height="40.00" />
     <Node Name="Scale9" X="525.00" Y="80.00" Width="81.00" Height="73.00" Event="xx" />
     <Node Name="ProgressBar" X="1244.00" Y="60.00" Width="200.00" Height="14.00" ScaleX="2.00" ScaleY="1.00" AnchorX="1.00" AnchorY="0.50" Progress="0.70" />
@@ -19,7 +19,7 @@
     <Node Name="Panel" X="479.00" Y="428.00" Width="133.00" Height="78.00" Path="test.xml" />
     <Node Name="Text" X="163.00" Y="301.00" Width="135.00" Height="34.00" Text="欢迎使用" FontSize="16" Color="#FFFFC0" />
     <Node Name="Text" X="153.00" Y="246.00" Width="213.00" Height="37.00" Text="滴答UI编辑器" FontSize="18" Color="#8B0000" />
-    <Node Name="Button" X="822.00" Y="100.00" Width="180.00" Height="64.00" AnchorX="1.00" AnchorY="1.00" Event="test2" normalText="登陆" selectText="登陆" disableText="登陆" normalBg="luseteshuanniu.png" selectBg="luseteshuanniu-over.png" disableBg="luseteshuanniu-over.png" Color="#FFFFFF" IsScale9="true" />
+    <Node Name="Button" X="822.00" Y="100.00" Width="136.00" Height="64.00" AnchorX="1.00" AnchorY="1.00" Event="test2" normalText="登陆" selectText="登陆" disableText="登陆" normalBg="luseteshuanniu.png" selectBg="luseteshuanniu-over.png" disableBg="luseteshuanniu-over.png" Color="#FFFFFF" IsScale9="true" />
     <Node Name="Button" X="650.00" Y="130.00" Width="180.00" Height="64.00" AnchorX="0.00" AnchorY="0.00" Event="test3" normalText="登陆" selectText="登陆" disableText="登陆" normalBg="luseteshuanniu.png" selectBg="luseteshuanniu-over.png" disableBg="luseteshuanniu-over.png" Color="#FFFFFF" IsScale9="true" />
     <Node Name="ProgressBar" X="1242.00" Y="30.00" Width="200.00" Height="14.00" ScaleX="2.00" ScaleY="1.00" AnchorX="1.00" AnchorY="0.50" Progress="0.50" />
     <Node Name="ProgressBar" X="1248.00" Y="95.00" Width="200.00" Height="14.00" ScaleX="2.00" ScaleY="1.00" AnchorX="1.00" AnchorY="0.50" Progress="0.90" />
